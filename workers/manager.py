@@ -37,7 +37,7 @@ class Manager:
             self.editor.work(talking, now_time)
 
             # Writer interval.
-            if now_time.day - today.day == self.manual.write_interval:
+            if (now_time - today).days == self.manual.write_interval:
                 logging.info('[MANAGER] write at:{}'.format(today.strftime('%Y-%m-%d')))
                 # Refresh Edit.
                 diary = self.editor.off_work(now_time)
